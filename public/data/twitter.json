@@ -1,0 +1,46 @@
+{
+   "endpoints":[
+      {
+         "name":"statuses",
+         "methods":[
+            {
+               "MethodName":"home_timeline",
+               "Synopsis":"Returns a collection of the most recent Tweets and retweets posted by the authenticating user and the users they follow. The home timeline is central to how most users interact with the Twitter service.",
+               "HTTPMethod":"GET",
+               "URI":"/statuses/home_timeline.json",
+               "RequiresOAuth":"Y"
+            },
+            {
+               "MethodName":"mentions_timeline",
+               "Synopsis":"Returns the 20 most recent mentions (tweets containing a users's @screen_name) for the authenticating user.",
+               "HTTPMethod":"GET",
+               "URI":"/statuses/mentions_timeline.json",
+               "RequiresOAuth":"Y"
+            },
+            {
+               "MethodName":"user_timeline",
+               "Synopsis":"Returns a collection of the most recent Tweets posted by the user indicated by the screen_name or user_id parameters.",
+               "HTTPMethod":"GET",
+               "URI":"/statuses/user_timeline.json",
+               "RequiresOAuth":"Y",
+               "parameters":[
+                  {
+                     "Name":"user_id",
+                     "Required":"N",
+                     "Default":null,
+                     "Type":"int",
+                     "Description":"The ID of the user for whom to return results for."
+                  },
+                  {
+                     "Name":"screen_name",
+                     "Required":"N",
+                     "Default":"",
+                     "Type":"string",
+                     "Description":"The screen name of the user for whom to return results for."
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+}
